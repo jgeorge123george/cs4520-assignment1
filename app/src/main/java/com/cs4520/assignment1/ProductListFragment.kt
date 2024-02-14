@@ -68,7 +68,7 @@ class ProductListFragment : Fragment() {
         productArrayList = arrayListOf<Product>()
         productsDataset.forEach { item ->
             val name = item[0]
-            //   val type = if (item[1] == "Equipment") R.drawable.pexels_photo_175039 else R.drawable.pexels_photo_1391487
+
 
             var prodType : ProductType
 
@@ -82,7 +82,7 @@ class ProductListFragment : Fragment() {
             val expiryDate = expiryDateStr?.let { LocalDate.parse(it.toString(), dateFormatter) }
             val price = item[3]
 
-            if(prodType == ProductType.Equipment){
+            if(prodType == ProductType.Equipment)   {
                 val equipmentProduct = Product.Equipment(name,price,prodType,expiryDate)
                 productArrayList.add(equipmentProduct)
             }else{

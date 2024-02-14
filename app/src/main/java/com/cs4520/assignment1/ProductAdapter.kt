@@ -33,11 +33,14 @@ class ProductAdapter(private val productList : ArrayList<Product>) : RecyclerVie
             holder.list_item_raw_layout.setBackgroundColor(ContextCompat.getColor(holder.itemView.context, R.color.yellow))
         }
 
-        holder.product_price.text = "$${currentItem.price.toString()}"
+
         if(currentItem.expiryDate != null) {
             holder.expirey_date.text = "Expiry : ${currentItem.expiryDate.toString()}"
+            holder.product_price.text = "$${currentItem.price.toString()}"
+
         }else{
             holder.expirey_date.text = ""
+            holder.product_price.text = "$${currentItem.price.toString()}"
         }
 
     }
